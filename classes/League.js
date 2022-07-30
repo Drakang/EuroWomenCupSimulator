@@ -24,6 +24,7 @@ export class League {
     // Jugar final
     this.playFinal(this.semifinalWinners);
   }
+
   // Configurar fase de equipos
   setupGroupStage(teams) {
     // Mezclar aleatoriamente array de equipos
@@ -167,7 +168,6 @@ export class League {
         console.log("========================");
         const [goals1, goals2] = this.playMatch(team1, team2);
         console.log(`[-] ${team1.name} ${goals1} - ${team2.name} ${goals2}`);
-
         const [goals3, goals4] = this.playMatch(team3, team4);
         console.log(`[-] ${team3.name} ${goals3} - ${team4.name} ${goals4}`);
         this.sortGroups(group.members);
@@ -275,7 +275,7 @@ export class League {
 
   playSemifinals(cualifiedTeams = {}) {
     console.log("\n======================================");
-    console.log("||***|| Semifinal ||***||");
+    console.log("||***||       Semifinal         |***||");
     console.log("======================================\n");
     const semifinalTeams = Object.values(cualifiedTeams);
     let q1 = [];
@@ -323,7 +323,7 @@ export class League {
 
   playFinal(teams = []) {
     console.log("\n======================================");
-    console.log("||***|| Final ||***||");
+    console.log("||***||          Final         ||***||");
     console.log("======================================\n");
 
     const winner = this.knockoutMatch(teams[0], teams[1]);
@@ -331,9 +331,9 @@ export class League {
       `[-] ${teams[0].name} ${teams[0].goals} - ${teams[1].goals} ${teams[1].name} => ${teams[winner].name}`
     );
 
-    console.log("\n======================================");
-    console.log(`||***|| ${teams[winner].name} Campeón!!||***||`);
-    console.log("======================================\n");
+    console.log("\n=============================================");
+    console.log(`||***|| ${teams[winner].name} Campeona EuroCup22!!||***||`);
+    console.log("=============================================\n");
   }
 
   // Retornar 0 si gana A o 1 si gana B. Si tienen los mismos
