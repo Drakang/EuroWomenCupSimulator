@@ -17,7 +17,7 @@ export class League {
     this.playGroupStage(this.groups);
     // Configurar playoff
     this.setupPlayoffs(this.groups);
-    // Jugar playoff y cuartos
+    // Jugar playoff/cuartos
     this.playPlayoffs(this.cualifiedTeams);
     // jugar la semifinal
     this.playSemifinals(this.cualifiedTeams);
@@ -232,18 +232,6 @@ export class League {
       firsts.push(group.members.shift());
       seconds.push(group.members.shift());
     });
-    // total: 8/2  = 4
-    let index = 0;
-    while (index < 4) {
-      index++;
-      this.cualifiedTeams[`q${index}`] = [];
-      if (firsts.length > 0) {
-        this.cualifiedTeams[`q${index}`].push(firsts.shift(), seconds.shift());
-      }
-    }
-  }
-
-  playPlayoffs(cualifiedTeams = {}) {
     console.log(
       "\n==========================================================="
     );
@@ -252,15 +240,24 @@ export class League {
       "===========================================================\n"
     );
     console.log("Equipos que participan en el playoff:\n");
-    const groups = ["Grupo A", "Grupo B", "Grupo C", "Grupo D"];
-    Object.values(cualifiedTeams).forEach((teams, index) => {
-      console.log(`[!] ${groups[index]}`);
-      for (let i = 0; i < teams.length - 1; i++) {
-        console.log(`[-] ${teams[i].name}, ${teams[i + 1].name}`);
-        console.log("===================\n");
+    const grou = ["Grupo A", "Grupo B", "Grupo C", "Grupo D"];
+    for (let i = 0; i < 4; i++) {
+      console.log(`[!] ${grou[i]}`);
+      console.log(`[-] ${firsts[i].name}, ${seconds[i].name}`);
+      console.log("===================\n");
+    }
+    // total: 8/2  = 4
+    let index = 0;
+    while (index < 4) {
+      index++;
+      this.cualifiedTeams[`q${index}`] = [];
+      if (firsts.length > 0) {
+        this.cualifiedTeams[`q${index}`].push(firsts.shift(), seconds.pop());
       }
-    });
+    }
+  }
 
+  playPlayoffs(cualifiedTeams = {}) {
     console.log("\n======================================");
     console.log("||***|| Cuartos de Final ||***||");
     console.log("======================================\n");
