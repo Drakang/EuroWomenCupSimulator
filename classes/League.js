@@ -250,9 +250,9 @@ export class League {
     let index = 0;
     while (index < 4) {
       index++;
-      this.cualifiedTeams[`q${index}`] = [];
+      this.cualifiedTeams[`${index}`] = [];
       if (firsts.length > 0) {
-        this.cualifiedTeams[`q${index}`].push(firsts.shift(), seconds.pop());
+        this.cualifiedTeams[`${index}`].push(firsts.shift(), seconds.pop());
       }
     }
   }
@@ -266,7 +266,7 @@ export class League {
       console.log(
         `[-] ${team[0].name} ${team[0].goals} - ${team[1].goals} ${team[1].name} => ${team[winner].name}`
       );
-      this.cualifiedTeams[`q${index + 1}`] = team[winner];
+      this.cualifiedTeams[`${index + 1}`] = team[winner];
     });
   }
 
@@ -275,34 +275,34 @@ export class League {
     console.log("||***||       Semifinal         |***||");
     console.log("======================================\n");
     const semifinalTeams = Object.values(cualifiedTeams);
-    let q1 = [];
-    let q2 = [];
+    let sem1 = [];
+    let sem2 = [];
     for (let i = 0; i < semifinalTeams.length; i++) {
       if (i % 2 === 0) {
-        q2.push(semifinalTeams[i]);
+        sem2.push(semifinalTeams[i]);
       } else {
-        q1.push(semifinalTeams[i]);
+        sem1.push(semifinalTeams[i]);
       }
     }
-    const q1index = this.knockoutMatch(q1[0], q1[1]);
-    const q2index = this.knockoutMatch(q2[0], q2[1]);
+    const sem1index = this.knockoutMatch(sem1[0], sem1[1]);
+    const sem2index = this.knockoutMatch(sem2[0], sem2[1]);
 
-    let aux = [...q1];
-    let q1Winner = aux.splice(q1index, 1).pop();
+    let aux = [...sem1];
+    let sem1Winner = aux.splice(sem1index, 1).pop();
 
     this.semifinalLosers = [...aux];
 
-    aux = [...q2];
-    let q2Winner = aux.splice(q2index, 1).pop();
+    aux = [...sem2];
+    let sem2Winner = aux.splice(sem2index, 1).pop();
 
     console.log(
-      `[-] ${q1[0].name} ${q1[0].goals} - ${q1[1].goals} ${q1[1].name} => ${q1Winner.name} `
+      `[-] ${sem1[0].name} ${sem1[0].goals} - ${sem1[1].goals} ${sem1[1].name} => ${sem1Winner.name} `
     );
     console.log(
-      `[-] ${q2[0].name} ${q2[0].goals} - ${q2[1].goals} ${q2[1].name} => ${q2Winner.name} `
+      `[-] ${sem2[0].name} ${sem2[0].goals} - ${sem2[1].goals} ${sem2[1].name} => ${sem2Winner.name} `
     );
     this.semifinalLosers.push([...aux].pop());
-    this.semifinalWinners.push(q1Winner, q2Winner);
+    this.semifinalWinners.push(sem1Winner, sem2Winner);
 
     console.log("\n======================================");
     console.log("||***|| Tercer y Cuarto Puesto ||***||");
@@ -328,9 +328,9 @@ export class League {
       `[-] ${teams[0].name} ${teams[0].goals} - ${teams[1].goals} ${teams[1].name} => ${teams[winner].name}`
     );
 
-    console.log("\n=============================================");
-    console.log(`||***|| ${teams[winner].name} Campeona EuroCup22!!||***||`);
-    console.log("=============================================\n");
+    console.log("\n===============================================");
+    console.log(`||***|| ${teams[winner].name} Campeona EuroWomenCup22!!||***||`);
+    console.log("===============================================\n");
   }
 
   // Retornar 0 si gana A o 1 si gana B. Si tienen los mismos
