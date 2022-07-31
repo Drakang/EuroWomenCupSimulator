@@ -3,11 +3,11 @@
 
 ### Aquí adjunto algunas fotos de consola mostrando la distintas partes de la practica.
 #### Fase de grupos donde se añaden aleatoriamente los equipos formando cuatro grupos de cuatro equipos en cada uno.
-![image](https://user-images.githubusercontent.com/103906418/181877262-7b3e42fb-1248-486f-ab26-b844c82654a4.png)
+![image](https://user-images.githubusercontent.com/103906418/182006974-f3426d29-421c-4b26-a07e-d029c8d08099.png)
 #### En esta parte se muestran las jornadas que juegan cada grupo( 3 jornadas por grupo) en la que se muestras los equipos del grupo, sus puntos, goles, goles en contra y diferencia de goles.
-![image](https://user-images.githubusercontent.com/103906418/181877233-7e81e801-7751-4f33-82f6-14306ba41f45.png)
+![image](https://user-images.githubusercontent.com/103906418/182006983-6bf9159b-113b-485a-8fd4-b7838774a164.png)
 #### Comenzaria la fase de playoff en la que se enfrantarian ocho equipos(los dos primeros de cada grupo), obteniendo un ganador del torneo ademas de un tercer y cuarto puesto.
-![image](https://user-images.githubusercontent.com/103906418/181877278-c9d5507e-1ae5-495e-b532-66751dabcf28.png)
+![image](https://user-images.githubusercontent.com/103906418/182007006-e4755f24-6be2-4326-a4ef-3e68ba9ecd94.png)
 
 ## ¡¡¡¡¡A jugar!!!!!
 
